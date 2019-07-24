@@ -1,0 +1,19 @@
+{
+    "env": {
+        "mocha": true,
+        "node": true,
+    },
+    "extends": [
+        "plugin:mocha/recommended"
+    ],
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "mocha"
+    ],
+    "rules": {
+        "mocha/no-mocha-arrows": "off"
+    }
+}
