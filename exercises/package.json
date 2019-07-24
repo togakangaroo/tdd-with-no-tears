@@ -1,0 +1,25 @@
+{
+  "name": "tdd-katas",
+  "version": "0.0.1",
+  "description": "node-based tdd katas for the tdd-with-no-tears presentation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "."
+  },
+  "keywords": [
+    "presentation",
+    "kata"
+  ],
+  "author": "gmauer@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "esm": "^3.2.25",
+    "mocha": "^6.2.0",
+    "sinon": "^7.3.2"
+  }
+}
