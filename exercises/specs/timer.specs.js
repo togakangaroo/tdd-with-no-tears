@@ -14,7 +14,7 @@ const createStopWatch = () => {
             }, 10)
         },
         lap: () => {
-            
+            sw.displays.laps.push(sw.displays.main)
         }
     }
     return sw
