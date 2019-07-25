@@ -60,18 +60,6 @@
         - [ ] When 1s have passed
           - [ ] it reads 11ms in main
           - [ ] there are no laps
-        - [ ] When stopped
-          - [ ] it reads 10s in main
-        - [ ] When 2s have passed
-          - [ ] it reads 10s in main
-          - [ ] When started again
-            - [ ] it reads 10s in main
-            - [ ] When 2s have passed
-              - [ ] it reads 12s in main
-        - [ ] When reset hit
-          - it reads 0 in main
-          - [ ] When 2s have passed
-            - [ ] it reads 2s in main
         - [ ] When lap hit
           - [ ] main slot reads 10s
           - [ ] Lap1 reads 10s
@@ -89,3 +77,15 @@
               - [ ] When reset hit
                 - [ ] it reads 0 in main
                 - [ ] there are no laps
+        - [ ] When reset hit
+          - it reads 0 in main
+          - [ ] When 2s have passed
+            - [ ] it reads 2s in main
+        - [ ] When stopped
+          - [ ] it reads 10s in main
+        - [ ] When 2s have passed
+          - [ ] it reads 10s in main
+          - [ ] When started again
+            - [ ] it reads 10s in main
+            - [ ] When 2s have passed
+              - [ ] it reads 12s in main
