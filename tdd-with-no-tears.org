@@ -46,15 +46,15 @@
       - If the client doesn't know exactly how it will work, its your job to help them formulate a vision
         - this helps with that!
 ** Live coding
-  - [-] [3/4] Given a new timer with a main and lap slots
+  - [X] [4/4] Given a new timer with a main and lap slots
     - [X] it reads nothing in main
     - [X] it has no laps
     - [X] When 1s has passed
       - [X] it reads nothing in main
       - [X] it has no laps
-    - [-] When timer started
+    - [X] When timer started
       - [X] it reads 0 in main
-      - [-] When 10s have passed
+      - [X] When 10s have passed
         - [X] main slot reads 10ms
         - [X] there are no laps
         - [X] When 1s have passed
@@ -81,11 +81,11 @@
           - [X] it reads 0 in main
           - [X] When 2s have passed
             - [X] it reads 2s in main
-        - [-] When stopped
+        - [X] When stopped
           - [X] it reads 10s in main
-          - [-] When 2s have passed
+          - [X] When 2s have passed
             - [X] it reads 10s in main
-            - [-] When started again
+            - [X] When started again
               - [X] it reads 10s in main
-              - [ ] When 2s have passed
-                - [ ] it reads 12s in main
+              - [X] When 2s have passed
+                - [X] it reads 12s in main

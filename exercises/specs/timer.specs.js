@@ -3,24 +3,26 @@ import { useFakeTimers } from 'sinon'
 
 const createStopWatch = ({ setInterval, clearInterval, Date} = global) => {
     const createDisplays = (main, laps = []) => ({main, laps})
-    let startTime
+    let resumeTime
     let nextToggle
     let currentInterval = null
+    let prePauseMs = 0
 
     const resume = () => {
+        resumeTime = new Date()
         clearInterval(currentInterval)
         currentInterval = setInterval(() => {
-            sw.displays.main = new Date() - startTime
+            sw.displays.main = (new Date() - resumeTime) + prePauseMs
         }, 10)
         nextToggle = pause
     }
     const pause = () => {
+        prePauseMs = new Date() - resumeTime
         clearInterval(currentInterval)
         nextToggle = resume
     }
     const start = () => {
         sw.displays = createDisplays(0)
-        startTime = new Date()
         resume()
     }
     nextToggle = start
@@ -32,7 +34,7 @@ const createStopWatch = ({ setInterval, clearInterval, Date} = global) => {
             sw.displays.laps.push(sw.displays.main)
         },
         reset: () => {
-            startTime = new Date()
+            resumeTime = new Date()
             sw.displays = createDisplays(0, [])
         },
     }
