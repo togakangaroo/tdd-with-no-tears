@@ -59,13 +59,19 @@
 ****** TODO there are no laps
 ****** [0%] When 1s have passed
 ******* TODO it reads 11ms in main
-
 ******* TODO there are no laps
+****** [0%] When stopped
+******** TODO it reads 10s in main
+******* [0%] When 2s have passed
+******** TODO it reads 10s in main
+******** [0%] When started again
+********* TODO it reads 10s in main
+********* [0%] When 2s have passed
+********** TODO it reads 12s in main
 ****** [0%] When reset hit
-******* TODO it reads 0 in main
+******* it reads 0 in main
 ******* [0%] When 2s have passed
 ********* TODO it reads 2s in main
-********* TODO there are no laps
 ****** [0%] When lap hit
 ******* TODO main slot reads 10s
 ******* TODO Lap1 reads 10s
@@ -76,7 +82,7 @@
 ********* TODO main slot reads 11s
 ********* TODO Lap 1 reads 10s
 ********* TODO Lap 2 reads 11s
-********* [100%] When 2s have passed
+********* [0%] When 2s have passed
 ********** TODO main reads 13s
 ********** TODO Lap 1 reads 10s
 ********** TODO Lap 2 reads 11s
