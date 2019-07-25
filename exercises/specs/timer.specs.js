@@ -5,14 +5,17 @@ const createStopWatch = () => {
     const createDisplays = (main, laps = []) => ({main, laps})
     let startTime
     let nextToggle
+    let currentInterval = null
 
     const resume = () => {
-        setInterval(() => {
+        clearInterval(currentInterval)
+        currentInterval = setInterval(() => {
             sw.displays.main = new Date() - startTime
         }, 10)
         nextToggle = pause
     }
     const pause = () => {
+        clearInterval(currentInterval)
         nextToggle = resume
     }
     const start = () => {

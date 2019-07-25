@@ -83,8 +83,8 @@
             - [X] it reads 2s in main
         - [-] When stopped
           - [X] it reads 10s in main
-          - [ ] When 2s have passed
-            - [ ] it reads 10s in main
+          - [-] When 2s have passed
+            - [X] it reads 10s in main
             - [ ] When started again
               - [ ] it reads 10s in main
               - [ ] When 2s have passed
