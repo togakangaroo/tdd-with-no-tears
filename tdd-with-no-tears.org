@@ -46,41 +46,40 @@
       - If the client doesn't know exactly how it will work, its your job to help them formulate a vision
         - this helps with that!
 ** Live coding
-*** story
-**** [0%] Given a new timer with a main and lap slots
+*** [0%] Given a new timer with a main and lap slots
+**** TODO it reads nothing in main
+**** TODO it has no laps
+**** [0%] When 1s has passed
 ***** TODO it reads nothing in main
 ***** TODO it has no laps
-***** [0%] When 1s has passed
-****** TODO it reads nothing in main
-****** TODO it has no laps
-***** [0%] When timer started
-****** TODO it reads 0 in main
-****** [0%] When 10s have passed
-******* TODO main slot reads 10ms
-******* TODO there are no laps
-******* [0%] When 1s have passed
-******** TODO it reads 11ms in main
+**** [0%] When timer started
+***** TODO it reads 0 in main
+***** [0%] When 10s have passed
+****** TODO main slot reads 10ms
+****** TODO there are no laps
+****** [0%] When 1s have passed
+******* TODO it reads 11ms in main
 
-******** TODO there are no laps
-******* [0%] When reset hit
-******** TODO it reads 0 in main
-******** [0%] When 2s have passed
-********** TODO it reads 2s in main
-********** TODO there are no laps
-******* [0%] When lap hit
-******** TODO main slot reads 10s
+******* TODO there are no laps
+****** [0%] When reset hit
+******* TODO it reads 0 in main
+******* [0%] When 2s have passed
+********* TODO it reads 2s in main
+********* TODO there are no laps
+****** [0%] When lap hit
+******* TODO main slot reads 10s
+******* TODO Lap1 reads 10s
+******* [0%] When 1000ms have passed
+******** TODO main slot reads 11s
 ******** TODO Lap1 reads 10s
-******** [0%] When 1000ms have passed
+******** [0%] When lap hit
 ********* TODO main slot reads 11s
-********* TODO Lap1 reads 10s
-********* [0%] When lap hit
-********** TODO main slot reads 11s
+********* TODO Lap 1 reads 10s
+********* TODO Lap 2 reads 11s
+********* [100%] When 2s have passed
+********** TODO main reads 13s
 ********** TODO Lap 1 reads 10s
 ********** TODO Lap 2 reads 11s
-********** [100%] When 2s have passed
-*********** TODO main reads 13s
-*********** TODO Lap 1 reads 10s
-*********** TODO Lap 2 reads 11s
-********** [0%] When reset hit
-*********** TODO it reads 0 in main
-*********** TODO there are no laps
+********* [0%] When reset hit
+********** TODO it reads 0 in main
+********** TODO there are no laps
