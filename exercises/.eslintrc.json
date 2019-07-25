@@ -1,9 +1,10 @@
 {
     "env": {
         "mocha": true,
-        "node": true,
+        "node": true
     },
     "extends": [
+        "eslint:recommended",
         "plugin:mocha/recommended"
     ],
     "parserOptions": {
@@ -14,6 +15,8 @@
         "mocha"
     ],
     "rules": {
+        "mocha/no-hooks-for-single-case": "off",
+        "mocha/no-setup-in-describe": "off",
         "mocha/no-mocha-arrows": "off"
     }
 }
