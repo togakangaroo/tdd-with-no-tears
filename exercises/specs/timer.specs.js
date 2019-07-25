@@ -3,10 +3,15 @@ import { useFakeTimers } from 'sinon'
 
 const createStopWatch = () => {
     const createDisplays = (main, laps = []) => ({main, laps})
+    let startTime
     const sw = {
         displays: createDisplays(null),
         toggle: () => {
             sw.displays = createDisplays(0)
+            startTime = new Date()
+            setInterval(() => {
+                sw.displays.main = new Date() - startTime
+            }, 10)
         },
     }
     return sw
