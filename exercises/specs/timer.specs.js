@@ -17,6 +17,7 @@ const createStopWatch = () => {
             sw.displays.laps.push(sw.displays.main)
         },
         reset: () => {
+            startTime = new Date()
             sw.displays = createDisplays(0, [])
         },
     }

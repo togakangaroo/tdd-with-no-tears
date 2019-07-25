@@ -77,10 +77,10 @@
               - [X] When reset hit
                 - [X] it reads 0 in main
                 - [X] there are no laps
-        - [-] When reset hit
+        - [X] When reset hit
           - [X] it reads 0 in main
-          - [ ] When 2s have passed
-            - [ ] it reads 2s in main
+          - [X] When 2s have passed
+            - [X] it reads 2s in main
         - [ ] When stopped
           - [ ] it reads 10s in main
           - [ ] When 2s have passed
