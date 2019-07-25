@@ -96,6 +96,11 @@ describe(`Stopwatch`, () => {
                         main_and_laps_should_display(2000, [])
                     })
                 })
+
+                describe(`paused`, () => {
+                    beforeEach(() => sw.toggle())
+                    main_and_laps_should_display(10000, [])
+                })
             })
         })
     })
