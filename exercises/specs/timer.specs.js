@@ -13,6 +13,9 @@ const createStopWatch = () => {
                 sw.displays.main = new Date() - startTime
             }, 10)
         },
+        lap: () => {
+            
+        }
     }
     return sw
 }
@@ -56,6 +59,11 @@ describe(`Stopwatch`, () => {
 
                 elapses(1000, () => {
                     main_and_laps_should_display(11000, [])
+                })
+
+                describe(`lap hit`, () => {
+                    beforeEach(() => sw.lap())
+                    main_and_laps_should_display(10000, [10000])
                 })
             })
         })
