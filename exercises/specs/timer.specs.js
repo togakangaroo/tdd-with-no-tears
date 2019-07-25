@@ -75,6 +75,11 @@ describe(`Stopwatch`, () => {
                             elapses(2000, () => {
                                 main_and_laps_should_display(13000, [10000, 11000])
                             })
+
+                            describe(`reset`, () => {
+                                beforeEach(() => sw.reset())
+                                main_and_laps_should_display(0, [])
+                            })
                         })
                     })
                 })

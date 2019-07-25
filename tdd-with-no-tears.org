@@ -70,10 +70,10 @@
               - [X] main slot reads 11s
               - [X] Lap 1 reads 10s
               - [X] Lap 2 reads 11s
-              - [ ] When 2s have passed
-                - [ ] main reads 13s
-                - [ ] Lap 1 reads 10s
-                - [ ] Lap 2 reads 11s
+              - [X] When 2s have passed
+                - [X] main reads 13s
+                - [X] Lap 1 reads 10s
+                - [X] Lap 2 reads 11s
               - [ ] When reset hit
                 - [ ] it reads 0 in main
                 - [ ] there are no laps
