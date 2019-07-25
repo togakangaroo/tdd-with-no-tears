@@ -25,5 +25,11 @@ describe(`Stopwatch`, () => {
             it(`shows nothing on main display`, () => expect(sw.displays.main).to.equal(null))
             it(`shows no laps`, () => expect(sw.displays.laps).to.deep.equal([]))
         })
+
+        describe(`started`, () => {
+            beforeEach(() => sw.toggle())
+            it(`shows 0s on main display`, () => expect(sw.displays.main).to.equal(0))
+            it(`shows no laps`, () => expect(sw.displays.laps).to.deep.equal([]))
+        })
     })
 })
