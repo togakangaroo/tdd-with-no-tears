@@ -46,46 +46,46 @@
       - If the client doesn't know exactly how it will work, its your job to help them formulate a vision
         - this helps with that!
 ** Live coding
-*** [0%] Given a new timer with a main and lap slots
-**** TODO it reads nothing in main
-**** TODO it has no laps
-**** [0%] When 1s has passed
-***** TODO it reads nothing in main
-***** TODO it has no laps
-**** [0%] When timer started
-***** TODO it reads 0 in main
-***** [0%] When 10s have passed
-****** TODO main slot reads 10ms
-****** TODO there are no laps
-****** [0%] When 1s have passed
-******* TODO it reads 11ms in main
-******* TODO there are no laps
-****** [0%] When stopped
-******** TODO it reads 10s in main
-******* [0%] When 2s have passed
-******** TODO it reads 10s in main
-******** [0%] When started again
-********* TODO it reads 10s in main
-********* [0%] When 2s have passed
-********** TODO it reads 12s in main
-****** [0%] When reset hit
-******* it reads 0 in main
-******* [0%] When 2s have passed
-********* TODO it reads 2s in main
-****** [0%] When lap hit
-******* TODO main slot reads 10s
-******* TODO Lap1 reads 10s
-******* [0%] When 1000ms have passed
-******** TODO main slot reads 11s
-******** TODO Lap1 reads 10s
-******** [0%] When lap hit
-********* TODO main slot reads 11s
-********* TODO Lap 1 reads 10s
-********* TODO Lap 2 reads 11s
-********* [0%] When 2s have passed
-********** TODO main reads 13s
-********** TODO Lap 1 reads 10s
-********** TODO Lap 2 reads 11s
-********* [0%] When reset hit
-********** TODO it reads 0 in main
-********** TODO there are no laps
+  - [ ] Given a new timer with a main and lap slots
+    - [ ] it reads nothing in main
+    - [ ] it has no laps
+    - [ ] When 1s has passed
+      - [ ] it reads nothing in main
+      - [ ] it has no laps
+    - [ ] When timer started
+      - [ ] it reads 0 in main
+      - [ ] When 10s have passed
+        - [ ] main slot reads 10ms
+        - [ ] there are no laps
+        - [ ] When 1s have passed
+          - [ ] it reads 11ms in main
+          - [ ] there are no laps
+        - [ ] When stopped
+          - [ ] it reads 10s in main
+        - [ ] When 2s have passed
+          - [ ] it reads 10s in main
+          - [ ] When started again
+            - [ ] it reads 10s in main
+            - [ ] When 2s have passed
+              - [ ] it reads 12s in main
+        - [ ] When reset hit
+          - it reads 0 in main
+          - [ ] When 2s have passed
+            - [ ] it reads 2s in main
+        - [ ] When lap hit
+          - [ ] main slot reads 10s
+          - [ ] Lap1 reads 10s
+          - [ ] When 1000ms have passed
+            - [ ] main slot reads 11s
+            - [ ] Lap1 reads 10s
+            - [ ] When lap hit
+              - [ ] main slot reads 11s
+              - [ ] Lap 1 reads 10s
+              - [ ] Lap 2 reads 11s
+              - [ ] When 2s have passed
+                - [ ] main reads 13s
+                - [ ] Lap 1 reads 10s
+                - [ ] Lap 2 reads 11s
+              - [ ] When reset hit
+                - [ ] it reads 0 in main
+                - [ ] there are no laps
