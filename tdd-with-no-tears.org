@@ -46,7 +46,7 @@
       - If the client doesn't know exactly how it will work, its your job to help them formulate a vision
         - this helps with that!
 ** Live coding
-  - [ ] Given a new timer with a main and lap slots
+  - [ ] [0/4] Given a new timer with a main and lap slots
     - [ ] it reads nothing in main
     - [ ] it has no laps
     - [ ] When 1s has passed
