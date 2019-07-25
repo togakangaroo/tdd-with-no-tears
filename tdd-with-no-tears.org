@@ -1,0 +1,86 @@
+* TDD With No Tears
+** I am not all about TDD all the time
+*** I feel like there's a split  
+    Between people who feel like they "get it" and those who feel like they spin their wheels with TDD most of the time. I want to propose a different way of looking at things.
+** First, lets review testing
+*** When do you write tests?
+    The obvious answer is that you should write tests that are helpful and not write tests that are not
+    I do not know why but that seems to be a very difficult idea
+    :joke:
+    Code coverage images
+    :END:
+*** TDD vs BDD 
+    Its about the test expressing clearly what you are testing in business terms - comes down often to how the test is named
+*** How to structure tests
+**** Arrange-Act-Assert 
+    :joke:
+    thats very robotic
+    :END:
+**** Given-When-Then
+     There's no clear distinction between the first two, I actually like to merge things - *when..then*
+     another way of looking at it - *when...when...when...it*
+     #+BEGIN_VERSE
+     When set up to cook an omlette for two
+       then it should have three eggs, grated mozerrela, green onions, salt, and milk on the counter
+       When combining eggs, milk, and a pinch of salt in a bowl
+         then it should have no eggs left on the counter
+         then it should have approximately 8oz of stuff in the bowl
+         When done beating the eggs with the milk
+           then there should be a bowl with a consistent pale yellow texture
+           then the original amount of cheese and onions is retained
+     #+END_VERSE
+     Well that sounds awkward, we can clean that up a bit by not being as literal with the *when...then* stuff
+     Refactor your tests mercilessly
+*** Stubs vs Mocks 
+    I don't use mocks often - I feel like their need is a code smell and an indicator of ISP violation
+** Design not Development
+*** Its great for the situations where you *don't* know exactly what to do
+**** We're going to write down using *when...when...when...it* format exactly what we want it to do
+*** Example - the timer
+    - After a ton of screw turning you finally have a for real user story from your client. Congratulations!
+    - As a _floor manager_ I would like _an on screen timer_ so that _I can run quick experiments with how long things take to get done_
+    - Not a ton of design beyond that - maybe a picture of a handheld timer
+    - Maybe some sketched out design
+      The thing is, more is not necessary
+      - if looking nice is not a prerequisite ie MVP, then don't worry about making it look nice. This is a legitimate request 
+      - If the client doesn't know exactly how it will work, its your job to help them formulate a vision
+        - this helps with that!
+** Live coding
+*** story
+**** [0%] Given a new timer with a main and lap slots
+***** TODO it reads nothing in main
+***** TODO it has no laps
+***** [0%] When 1s has passed
+****** TODO it reads nothing in main
+****** TODO it has no laps
+***** [0%] When timer started
+****** TODO it reads 0 in main
+****** [0%] When 10s have passed
+******* TODO main slot reads 10ms
+******* TODO there are no laps
+******* [0%] When 1s have passed
+******** TODO it reads 11ms in main
+
+******** TODO there are no laps
+******* [0%] When reset hit
+******** TODO it reads 0 in main
+******** [0%] When 2s have passed
+********** TODO it reads 2s in main
+********** TODO there are no laps
+******* [0%] When lap hit
+******** TODO main slot reads 10s
+******** TODO Lap1 reads 10s
+******** [0%] When 1000ms have passed
+********* TODO main slot reads 11s
+********* TODO Lap1 reads 10s
+********* [0%] When lap hit
+********** TODO main slot reads 11s
+********** TODO Lap 1 reads 10s
+********** TODO Lap 2 reads 11s
+********** [100%] When 2s have passed
+*********** TODO main reads 13s
+*********** TODO Lap 1 reads 10s
+*********** TODO Lap 2 reads 11s
+********** [0%] When reset hit
+*********** TODO it reads 0 in main
+*********** TODO there are no laps
