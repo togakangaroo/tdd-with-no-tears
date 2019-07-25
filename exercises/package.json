@@ -4,11 +4,12 @@
   "description": "node-based tdd katas for the tdd-with-no-tears presentation",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha -r esm ./specs/timer.specs.js",
+    "test:watch": "mocha --watch -r esm ./specs/timer.specs.js"
   },
   "repository": {
     "type": "git",
-    "url": "."
+    "url": "https://github.com/togakangaroo/tdd-with-no-tears"
   },
   "keywords": [
     "presentation",
