@@ -1,7 +1,7 @@
 import { expect } from 'chai'
 import { useFakeTimers } from 'sinon'
 
-const createStopWatch = () => {
+const createStopWatch = ({ setInterval, clearInterval, Date} = global) => {
     const createDisplays = (main, laps = []) => ({main, laps})
     let startTime
     let nextToggle
@@ -48,7 +48,7 @@ describe(`Stopwatch`, () => {
 
     describe(`new instance`, () => {
         let sw
-        beforeEach(() => sw = createStopWatch())
+        beforeEach(() => sw = createStopWatch(clock))
 
         const main_and_laps_should_display = (mainMs, lapMss) => {
             it(`shows ${null === mainMs ? `nothing` : toSec(mainMs) } on main display`, () =>
