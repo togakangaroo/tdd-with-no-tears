@@ -40,6 +40,11 @@ describe(`Stopwatch`, () => {
         describe(`started`, () => {
             beforeEach(() => sw.toggle())
             main_and_laps_should_display(0, [])
+
+            describe(`10s elsapses`, () => {
+                beforeEach(() => clock.tick(10000))
+                main_and_laps_should_display(10000, [])
+            })
         })
     })
 })
