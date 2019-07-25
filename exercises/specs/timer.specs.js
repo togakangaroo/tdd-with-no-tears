@@ -1,5 +1,13 @@
 import { expect } from 'chai'
 
+const createStopWatch = () => {
+    const createDisplays = (main, laps = []) => ({main, laps})
+    const sw = {
+        displays: createDisplays(null)
+    }
+    return sw
+}
+
 describe(`Given a stopwatch`, () => {
     let sw
     beforeEach(() => sw = createStopWatch())
