@@ -34,11 +34,16 @@ describe(`Stopwatch`, () => {
             it(`shows ${!lapMss.length ? `no laps` : lapMss.map(toSec)}`, () =>
                expect(sw.displays.laps).to.deep.equal(lapMss))
         }
+        const elapses = (ms, inner) => {
+            describe(`${toSec(ms)} elapses`, () => {
+                beforeEach(() => clock.tick(ms))
+                inner()
+            })
+        }
 
         main_and_laps_should_display(null, [])
 
-        describe(`1s elapses`, () => {
-            beforeEach(() => clock.tick(1000))
+        elapses(1000, () => {
             main_and_laps_should_display(null, [])
         })
 
@@ -46,12 +51,10 @@ describe(`Stopwatch`, () => {
             beforeEach(() => sw.toggle())
             main_and_laps_should_display(0, [])
 
-            describe(`10s elsapses`, () => {
-                beforeEach(() => clock.tick(10000))
+            elapses(10000, () => {
                 main_and_laps_should_display(10000, [])
 
-                describe(`1s elapses`, () => {
-                    beforeEach(() => clock.tick(1000))
+                elapses(1000, () => {
                     main_and_laps_should_display(11000, [])
                 })
             })
