@@ -4,7 +4,10 @@ import { useFakeTimers } from 'sinon'
 const createStopWatch = () => {
     const createDisplays = (main, laps = []) => ({main, laps})
     const sw = {
-        displays: createDisplays(null)
+        displays: createDisplays(null),
+        toggle: () => {
+            sw.displays = createDisplays(0)
+        },
     }
     return sw
 }
