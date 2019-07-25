@@ -12,6 +12,8 @@ const createStopWatch = () => {
     return sw
 }
 
+const toSec = ms => `${ms/1000}s`
+
 describe(`Stopwatch`, () => {
     let clock
     beforeEach(() => clock = useFakeTimers())
@@ -20,19 +22,24 @@ describe(`Stopwatch`, () => {
     describe(`new instance`, () => {
         let sw
         beforeEach(() => sw = createStopWatch())
-        it(`shows nothing on main display`, () => expect(sw.displays.main).to.equal(null))
-        it(`shows no laps`, () => expect(sw.displays.laps).to.deep.equal([]))
+
+        const main_and_laps_should_display = (mainMs, lapMss) => {
+            it(`shows ${null === mainMs ? `nothing` : toSec(mainMs) } on main display`, () =>
+               expect(sw.displays.main).to.equal(mainMs))
+            it(`shows ${!lapMss.length ? `no laps` : lapMss.map(toSec)}`, () =>
+               expect(sw.displays.laps).to.deep.equal(lapMss))
+        }
+
+        main_and_laps_should_display(null, [])
 
         describe(`1s elapses`, () => {
             beforeEach(() => clock.tick(1000))
-            it(`shows nothing on main display`, () => expect(sw.displays.main).to.equal(null))
-            it(`shows no laps`, () => expect(sw.displays.laps).to.deep.equal([]))
+            main_and_laps_should_display(null, [])
         })
 
         describe(`started`, () => {
             beforeEach(() => sw.toggle())
-            it(`shows 0s on main display`, () => expect(sw.displays.main).to.equal(0))
-            it(`shows no laps`, () => expect(sw.displays.laps).to.deep.equal([]))
+            main_and_laps_should_display(0, [])
         })
     })
 })
