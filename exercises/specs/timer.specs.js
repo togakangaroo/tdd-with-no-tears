@@ -4,15 +4,27 @@ import { useFakeTimers } from 'sinon'
 const createStopWatch = () => {
     const createDisplays = (main, laps = []) => ({main, laps})
     let startTime
+    let nextToggle
+
+    const resume = () => {
+        setInterval(() => {
+            sw.displays.main = new Date() - startTime
+        }, 10)
+        nextToggle = pause
+    }
+    const pause = () => {
+        nextToggle = resume
+    }
+    const start = () => {
+        sw.displays = createDisplays(0)
+        startTime = new Date()
+        resume()
+    }
+    nextToggle = start
+
     const sw = {
         displays: createDisplays(null),
-        toggle: () => {
-            sw.displays = createDisplays(0)
-            startTime = new Date()
-            setInterval(() => {
-                sw.displays.main = new Date() - startTime
-            }, 10)
-        },
+        toggle: () => nextToggle(),
         lap: () => {
             sw.displays.laps.push(sw.displays.main)
         },
