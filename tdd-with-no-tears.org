@@ -63,13 +63,13 @@
         - [-] When lap hit
           - [X] main slot reads 10s
           - [X] Lap1 reads 10s
-          - [ ] When 1000ms have passed
-            - [ ] main slot reads 11s
-            - [ ] Lap1 reads 10s
-            - [ ] When lap hit
-              - [ ] main slot reads 11s
-              - [ ] Lap 1 reads 10s
-              - [ ] Lap 2 reads 11s
+          - [-] When 1s have passed
+            - [X] main slot reads 11s
+            - [X] Lap1 reads 10s
+            - [-] When lap hit
+              - [X] main slot reads 11s
+              - [X] Lap 1 reads 10s
+              - [X] Lap 2 reads 11s
               - [ ] When 2s have passed
                 - [ ] main reads 13s
                 - [ ] Lap 1 reads 10s
