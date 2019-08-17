@@ -36,56 +36,56 @@
 ** Design not Development
 *** Its great for the situations where you *don't* know exactly what to do
 **** We're going to write down using *when...when...when...it* format exactly what we want it to do
-*** Example - the timer
+*** Example - the stopwatch
     - After a ton of screw turning you finally have a for real user story from your client. Congratulations!
-    - As a _floor manager_ I would like _an on screen timer_ so that _I can run quick experiments with how long things take to get done_
-    - Not a ton of design beyond that - maybe a picture of a handheld timer
+    - As a _floor manager_ I would like _an on screen stopwatch_ so that _I can run quick experiments with how long things take to get done_
+    - Not a ton of design beyond that - maybe a picture of a handheld stopwatch
     - Maybe some sketched out design
       The thing is, more is not necessary
       - if looking nice is not a prerequisite ie MVP, then don't worry about making it look nice. This is a legitimate request 
       - If the client doesn't know exactly how it will work, its your job to help them formulate a vision
         - this helps with that!
 ** Live coding
-  - [-] [2/4] Given a new timer with a main and lap slots
+  - [X] [4/4] Given a new stopwatch with a main and lap slots
     - [X] it reads nothing in main
     - [X] it has no laps
-    - [ ] When 1s has passed
-      - [ ] it reads nothing in main
-      - [ ] it has no laps
-    - [ ] When timer started
-      - [ ] it reads 0 in main
-      - [ ] When 10s have passed
-        - [ ] main slot reads 10ms
-        - [ ] there are no laps
-        - [ ] When 1s have passed
-          - [ ] it reads 11s in main
-          - [ ] there are no laps
-        - [ ] When lap hit
-          - [ ] main slot reads 10s
-          - [ ] Lap1 reads 10s
-          - [ ] When 1s have passed
-            - [ ] main slot reads 11s
-            - [ ] Lap1 reads 10s
-            - [ ] When lap hit
-              - [ ] main slot reads 11s
-              - [ ] Lap 1 reads 10s
-              - [ ] Lap 2 reads 11s
-              - [ ] When 2s have passed
-                - [ ] main reads 13s
-                - [ ] Lap 1 reads 10s
-                - [ ] Lap 2 reads 11s
-              - [ ] When reset hit
-                - [ ] it reads 0 in main
-                - [ ] there are no laps
-        - [ ] When reset hit
-          - [ ] it reads 0 in main
-          - [ ] When 2s have passed
-            - [ ] it reads 2s in main
-        - [ ] When stopped
-          - [ ] it reads 10s in main
-          - [ ] When 2s have passed
-            - [ ] it reads 10s in main
-            - [ ] When started again
-              - [ ] it reads 10s in main
-              - [ ] When 2s have passed
-                - [ ] it reads 12s in main
+    - [X] When 1s has passed
+      - [X] it reads nothing in main
+      - [X] it has no laps
+    - [X] When stopwatch started
+      - [X] it reads 0 in main
+      - [X] When 10s have passed
+        - [X] main slot reads 10ms
+        - [X] there are no laps
+        - [X] When 1s have passed
+          - [X] it reads 11s in main
+          - [X] there are no laps
+        - [X] When lap hit
+          - [X] main slot reads 10s
+          - [X] Lap1 reads 10s
+          - [X] When 1s have passed
+            - [X] main slot reads 11s
+            - [X] Lap1 reads 10s
+            - [X] When lap hit
+              - [X] main slot reads 11s
+              - [X] Lap 1 reads 10s
+              - [X] Lap 2 reads 11s
+              - [X] When 2s have passed
+                - [X] main reads 13s
+                - [X] Lap 1 reads 10s
+                - [X] Lap 2 reads 11s
+              - [X] When reset hit
+                - [X] it reads 0 in main
+                - [X] there are no laps
+        - [X] When reset hit
+          - [X] it reads 0 in main
+          - [X] When 2s have passed
+            - [X] it reads 2s in main
+        - [X] When stopped
+          - [X] it reads 10s in main
+          - [X] When 2s have passed
+            - [X] it reads 10s in main
+            - [X] When started again
+              - [X] it reads 10s in main
+              - [X] When 2s have passed
+                - [X] it reads 12s in main
