@@ -55,7 +55,7 @@
     - [ ] When timer started
       - [ ] it reads 0 in main
       - [ ] When 10s have passed
-        - [ ] main slot reads 10ms
+        - [ ] main slot reads 10s
         - [ ] there are no laps
         - [ ] When 1s have passed
           - [ ] it reads 11s in main
