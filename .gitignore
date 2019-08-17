@@ -1,2 +1,9 @@
-**/node_modules/
+# generated files
 tdd-with-no-tears.html
+
+# node
+**/node_modules/
+
+# dotnet
+obj/
+bin/
