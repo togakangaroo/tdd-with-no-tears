@@ -1,32 +1,26 @@
 using System;
+using System.Collections.Generic;
 using Xunit;
 using Xbehave;
 
-namespace Stopwatch.Tests
-{
-    public class Calculator
-    {
-        public int Add(int x, int y) => x + y;
+using static Xunit.Assert;
+
+namespace Stopwatch.Tests {
+    public class Stopwatch {
+        public TimeDisplays Displays { get; private set; } = new TimeDisplays();
+        public class TimeDisplays {
+            public TimeSpan? Main { get; set; }
+            public IList<TimeSpan> Laps { get; set; } = new List<TimeSpan>();
+        }
     }
 
-    public class StopwatchFeature
-    {
+    public class StopwatchFeature {
         [Scenario]
-        public void Addition(int x, int y, Calculator calculator, int answer)
-        {
-            "Given the number 1"
-                .x(() => x = 1);
-
-            "And the number 2"
-                .x(() => y = 2);
-
-            "And a calculator"
-                .x(() => calculator = new Calculator());
-
-            "When I add the numbers together"
-                .x(() => answer = calculator.Add(x, y));
-
-            "Then the answer is 3"
-                .x(() => Xunit.Assert.Equal(3, answer));
+        public void Doesnt_do_anything_without_being_started() {
+            "Given a stopwatch".x(() => sw = new Stopwatch());
+            "it reads nothing in main".x(() => Equal(null, sw.Displays.Main) );
+            "it has no laps".x(() => Equal(0, sw.Displays.Laps.Count));
         }
+
+        Stopwatch sw;
     }}
