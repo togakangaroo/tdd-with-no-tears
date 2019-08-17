@@ -49,7 +49,6 @@ namespace Stopwatch.Tests {
             this.nextToggle = this.pause;
         }
         void ifStarted(Action act) {
-
             if(this.MainDisplay == null)
                 return;
             act();
