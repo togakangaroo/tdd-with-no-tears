@@ -22,7 +22,7 @@
     "eslint": "^6.1.0",
     "eslint-plugin-mocha": "^6.0.0",
     "esm": "^3.2.25",
-    "mocha": "^6.2.0",
+    "mocha": "^10.2.0",
     "sinon": "^7.3.2"
   }
 }
