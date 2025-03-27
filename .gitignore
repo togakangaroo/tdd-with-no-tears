@@ -8,3 +8,5 @@ tdd-with-no-tears.html
 obj/
 bin/
 *.ipynb
+
+\#.*
