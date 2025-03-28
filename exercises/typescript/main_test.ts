@@ -48,7 +48,11 @@ describe(`Given a new stopwatch with a main and lap slot`, () => {
       );
   };
 
-  const timePassed = (sec: number) => beforeEach(() => time.tick(sec * 1000));
+  const timePassed = (sec: number, nested: Callback) =>
+    describe(`when {sec}s have passed`, () => {
+      beforeEach(() => time.tick(sec * 1000));
+      nested();
+    });
 
   it(`reads empty`, () => assertEquals(sw.display(), null));
 
@@ -58,18 +62,20 @@ describe(`Given a new stopwatch with a main and lap slot`, () => {
     });
     displayShouldRead(0);
 
-    describe(`when 10s have passed`, () => {
-      timePassed(10);
+    timePassed(10, () => {
       displayShouldRead(10, []);
 
-      describe(`when 1s has passed`, () => {
-        timePassed(1);
+      timePassed(1, () => {
         displayShouldRead(11, []);
       });
 
       describe(`when lap hit`, () => {
         beforeEach(() => sw.lap());
         displayShouldRead(10, [10]);
+
+        timePassed(1, () => {
+          displayShouldRead(11, [10]);
+        });
       });
     });
   });
