@@ -7,3 +7,6 @@ tdd-with-no-tears.html
 # dotnet
 obj/
 bin/
+*.ipynb
+
+\#.*
