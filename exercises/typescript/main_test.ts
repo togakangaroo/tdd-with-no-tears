@@ -75,6 +75,12 @@ describe(`Given a new stopwatch with a main and lap slot`, () => {
 
         timePassed(1, () => {
           displayShouldRead(11, [10]);
+
+          describe(`when lap hit`, () => {
+            beforeEach(() => sw.lap());
+            displayShouldRead(11, [10, 11]);
+            timePassed(2, () => displayShouldRead(13, [10, 11]));
+          });
         });
       });
     });
