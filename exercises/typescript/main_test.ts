@@ -11,23 +11,47 @@ type StopWatch = {
   reset: () => void;
 };
 
-const secSince = (startTime: number) => (Date.now() - startTime) / 1000;
-
 const createStopWatch = (): StopWatch => {
   let startTime: number | null = null;
   let laps: number[] = [];
+
+  let timeToOffset = 0;
+  let pausedAt = null as null | number;
+
+  const elapsed = () => {
+    if (startTime === null) return null;
+    let until: number = pausedAt === null ? Date.now() : pausedAt;
+    return (until - startTime - timeToOffset) / 1000;
+  };
   const reset = () => {
     startTime = Date.now();
+    timeToOffset = 0;
+    pausedAt = null;
     laps = [];
   };
-  return {
-    start: reset,
-    stop: () => {},
-    display: () => (!startTime ? null : secSince(startTime)),
+  const resume = () => {
+    if (pausedAt === null) return;
+    timeToOffset += Date.now() - pausedAt;
+    pausedAt = null;
+  };
+  const sw = {
+    start: () => {
+      reset();
+      sw.start = resume;
+    },
+    stop: () => {
+      pausedAt = Date.now();
+    },
+    display: () => (!startTime ? null : elapsed()),
     laps: () => laps,
-    lap: () => (laps = !startTime ? [] : [...laps, secSince(startTime)]),
+    lap: () => {
+      const currentElapsed = elapsed();
+      if (null === currentElapsed) return;
+      laps = !startTime ? [] : [...laps, currentElapsed];
+    },
     reset,
   };
+  return sw;
 };
 
 type Callback = () => void | Promise<void>;
