@@ -7,6 +7,7 @@ type StopWatch = {
   display: () => number | null;
   laps: () => number[];
   lap: () => void;
+  reset: () => void;
 };
 
 const secSince = (startTime: number) => (Date.now() - startTime) / 1000;
@@ -14,11 +15,16 @@ const secSince = (startTime: number) => (Date.now() - startTime) / 1000;
 const createStopWatch = (): StopWatch => {
   let startTime: number | null = null;
   let laps: number[] = [];
+  const reset = () => {
+    startTime = Date.now();
+    laps = [];
+  };
   return {
-    start: () => (startTime = Date.now()),
+    start: reset,
     display: () => (!startTime ? null : secSince(startTime)),
     laps: () => laps,
     lap: () => (laps = !startTime ? [] : [...laps, secSince(startTime)]),
+    reset,
   };
 };
 
@@ -80,6 +86,10 @@ describe(`Given a new stopwatch with a main and lap slot`, () => {
             beforeEach(() => sw.lap());
             displayShouldRead(11, [10, 11]);
             timePassed(2, () => displayShouldRead(13, [10, 11]));
+          });
+          describe(`when reset hit`, () => {
+            beforeEach(() => sw.reset());
+            displayShouldRead(0, []);
           });
         });
       });
