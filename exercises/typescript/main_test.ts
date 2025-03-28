@@ -4,6 +4,7 @@ import { assertEquals } from "@std/assert";
 
 type StopWatch = {
   start: () => void;
+  stop: () => void;
   display: () => number | null;
   laps: () => number[];
   lap: () => void;
@@ -21,6 +22,7 @@ const createStopWatch = (): StopWatch => {
   };
   return {
     start: reset,
+    stop: () => {},
     display: () => (!startTime ? null : secSince(startTime)),
     laps: () => laps,
     lap: () => (laps = !startTime ? [] : [...laps, secSince(startTime)]),
@@ -90,6 +92,24 @@ describe(`Given a new stopwatch with a main and lap slot`, () => {
           describe(`when reset hit`, () => {
             beforeEach(() => sw.reset());
             displayShouldRead(0, []);
+          });
+        });
+      });
+
+      describe(`when reset hit`, () => {
+        beforeEach(() => sw.reset());
+        displayShouldRead(0, []);
+      });
+
+      describe(`when stopped`, () => {
+        beforeEach(() => sw.stop());
+        displayShouldRead(10, []);
+        timePassed(2, () => {
+          displayShouldRead(10, []);
+          describe(`restarted`, () => {
+            beforeEach(() => sw.start());
+            displayShouldRead(10, []);
+            timePassed(2, () => displayShouldRead(12, []));
           });
         });
       });
